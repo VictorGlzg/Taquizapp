@@ -5,12 +5,24 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Taquizapp"
     xmlns:pages="clr-namespace:Taquizapp.Pages"
+    Shell.TabBarBackgroundColor="{StaticResource TaquizaSecondaryLight}"
+    Shell.TabBarForegroundColor="{StaticResource TaquizaPrimary}"
+    Shell.TabBarTitleColor="{StaticResource TaquizaPrimary}"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False"
     Shell.FlyoutBehavior="Disabled"
     Title="Taquizapp">
 
-    <FlyoutItem Route="Home">
-        <ShellContent Route="HomePage" 
-                  ContentTemplate="{DataTemplate pages:HomePage}"/>
-    </FlyoutItem>
+    <TabBar>
+        <Tab Title="Inicio" Icon="home_icon">
+            <ShellContent Route="HomePage" ContentTemplate="{DataTemplate pages:HomePage}"/>
+        </Tab>
+        <Tab Title="Taquiza" Icon="food_icon">
+            <ShellContent Route="StewSelectionPage" ContentTemplate="{DataTemplate pages:StewSelectionPage}" />
+        </Tab>
+        <Tab Title="Configuración" Icon="home_icon">
+            <ShellContent Route="ConfigPage" ContentTemplate="{DataTemplate pages:ConfigPage}" />
+        </Tab>
+    </TabBar>
 
 </Shell>

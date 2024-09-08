@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="Taquizapp.Pages.HomePage"
-             Shell.NavBarIsVisible="False"
-             Title="HomePage">
-    <VerticalStackLayout>
+             Shell.TabBarIsVisible="True"
+             Title="Home Page">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="{StaticResource TaquizaPrimary}"
+                                   StatusBarStyle="LightContent"/>
+    </ContentPage.Behaviors>
+    <Grid BackgroundColor="{StaticResource TaquizaPrimary}">
         <Label 
-            Text="Bienvenido Usuario, a la app de la Taquiza"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            Text="Bienvenido Victor"
+            FontSize="25"
+            VerticalOptions="Start" 
+            HorizontalOptions="Start"
+            Margin="30"/>
+    </Grid>
 </ContentPage>

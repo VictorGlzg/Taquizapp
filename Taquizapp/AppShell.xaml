@@ -4,12 +4,13 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Taquizapp"
+    xmlns:pages="clr-namespace:Taquizapp.Pages"
     Shell.FlyoutBehavior="Disabled"
     Title="Taquizapp">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <FlyoutItem Route="Home">
+        <ShellContent Route="HomePage" 
+                  ContentTemplate="{DataTemplate pages:HomePage}"/>
+    </FlyoutItem>
 
 </Shell>

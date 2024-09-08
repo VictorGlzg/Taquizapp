@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using Taquizapp.Pages;
 using Taquizapp.Services.Navigation;
+using Taquizapp.ViewModels.Home;
 using Taquizapp.ViewModels.StewSelection;
 
 namespace Taquizapp;
@@ -9,12 +10,14 @@ public static class Extensions
     public static MauiAppBuilder AddViewModels(this MauiAppBuilder mauiAppBuilder)
     {
         mauiAppBuilder.Services.AddSingleton<StewSelectionViewModel>();
+        mauiAppBuilder.Services.AddSingleton<HomeViewModel>();
         return mauiAppBuilder;
     }
 
     public static MauiAppBuilder AddShellRoutes(this MauiAppBuilder mauiAppBuilder)
     {
         mauiAppBuilder.Services.AddTransientWithShellRoute<StewSelectionPage, StewSelectionViewModel>(nameof(StewSelectionPage));
+        mauiAppBuilder.Services.AddTransientWithShellRoute<HomePage, HomeViewModel>(nameof(HomePage));
         return mauiAppBuilder;
     }
 

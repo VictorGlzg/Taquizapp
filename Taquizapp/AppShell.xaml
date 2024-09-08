@@ -4,12 +4,25 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Taquizapp"
+    xmlns:pages="clr-namespace:Taquizapp.Pages"
+    Shell.TabBarBackgroundColor="{StaticResource TaquizaSecondaryLight}"
+    Shell.TabBarForegroundColor="{StaticResource TaquizaPrimary}"
+    Shell.TabBarTitleColor="{StaticResource TaquizaPrimary}"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False"
     Shell.FlyoutBehavior="Disabled"
     Title="Taquizapp">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <Tab Title="Inicio" Icon="{OnPlatform 'home_icon', WinUI='home_icon.png'}">
+            <ShellContent Route="HomePage" ContentTemplate="{DataTemplate pages:HomePage}"/>
+        </Tab>
+        <Tab Title="Taquiza" Icon="{OnPlatform 'food_icon', WinUI='food_icon.png'}">
+            <ShellContent Route="StewSelectionPage" ContentTemplate="{DataTemplate pages:StewSelectionPage}" />
+        </Tab>
+        <Tab Title="Configuración" Icon="{OnPlatform 'gear_icon', WinUI='gear_icon.png'}">
+            <ShellContent Route="ConfigPage" ContentTemplate="{DataTemplate pages:ConfigPage}" />
+        </Tab>
+    </TabBar>
 
 </Shell>
